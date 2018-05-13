@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-describe Comment do
-  describe 'Validations' do
+describe Comment, type: :model do
     it {should belong_to(:job)}
-  end
 end
