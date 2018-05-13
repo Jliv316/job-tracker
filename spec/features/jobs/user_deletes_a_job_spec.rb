@@ -23,6 +23,7 @@ describe 'user deletes an existing job' do
     visit company_jobs_path(company)
 
     click_link 'Developer'
+    expect(current_path).to eq("/companies/#{company.id}/jobs/#{job_1.id}")
     expect(page).to have_content(job_1.title)
 
     click_link 'Delete'
