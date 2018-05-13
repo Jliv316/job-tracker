@@ -3,7 +3,9 @@ require 'rails_helper'
 describe 'User creates a new category' do
   scenario 'a user can create a new job' do
     category = 'Development'
-    visit new_company_job_category_path
+    company = Company.create!(name: 'ESPN')
+    job = company.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver')
+    visit new_category_path
 
     fill_in 'Name', with: category
     click_button 'Save'
