@@ -8,11 +8,11 @@ describe 'User creates a new category' do
     visit new_category_path
 
     fill_in 'Name', with: category
-    click_button 'Save'
+    click_button 'Create Category'
 
-    expect(current_path).to eq(categories)
+    expect(current_path).to eq(categories_path)
     expect(page).to have_content(category)
-    expect(Categories.count).to eq(1)
+    expect(Category.count).to eq(1)
   end
 end
 

@@ -8,7 +8,6 @@ describe "User sees all categories" do
     category_two = Category.create!(name: category_name_two)
 
     visit categories_path
-    save_and_open_page
 
     expect(page).to have_content(category_name)
     expect(page).to have_link('add a new category', :href => '/categories/new')
