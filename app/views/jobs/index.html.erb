@@ -4,7 +4,7 @@
   <% @jobs.each do |job| %>
   <li class=job_<%= job.id %>>
     <%= job.title %> at <%= job.company.name %>
-    <%= link_to "Delete", company_jobs_path(job) method: "delete" %>
+    <%= link_to "Delete", company_job_path(job.company, job), method: :delete %>
   </li>
   <% end %>
 </ul>
