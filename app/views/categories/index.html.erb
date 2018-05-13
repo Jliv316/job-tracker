@@ -1,7 +1,10 @@
 <h3>Job Categories</h3>
 
-<ul>
-  <% @categories.each do |category| %>
-    <%= category.name %> at <%= category.count %>
-  <% end %>
-</ul>
+  <a class= 'button' href=<%= new_category_path %>>add a new category</a>
+
+
+  <ul>
+    <% @categories.each do |category| %>
+    <li><%= category.name %> <%= category.name.size %></li>
+    <% end %>
+  </ul>
