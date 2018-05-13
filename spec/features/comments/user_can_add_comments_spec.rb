@@ -7,7 +7,10 @@ describe 'user visits a specific job page' do
 
     visit company_job_path(company, job)
     body = 'Spoke to hiring manager, Jacob. Plan to follow up Monday.'
-    fill_in 
+    fill_in 'comment[body]', with: body
+    click_button "Submit"
 
+    expect(current_path).to eq(company_job_path(company, job))
+    expect(page).to have_content(body)
   end
 end
