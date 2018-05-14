@@ -13,6 +13,7 @@ class CategoriesController < ApplicationController
       flash[:success] = "#{@category.title} added!"
       redirect_to categories_path
     else
+      flash[:error] = "#{@category.title} already exists"
       render :new
     end
   end
@@ -20,6 +21,6 @@ class CategoriesController < ApplicationController
 private
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:title)
   end
 end

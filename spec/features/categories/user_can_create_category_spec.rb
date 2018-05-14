@@ -6,29 +6,27 @@ describe 'User creates a new category' do
 
     visit new_category_path
 
-    fill_in 'Title', with: category
+    fill_in 'category[title]', with: category
     click_button 'Create Category'
-    save_and_open_page
 
     expect(current_path).to eq(categories_path)
     expect(page).to have_content("#{category} added!")
     expect(Category.count).to eq(1)
   end
-  # 
-  # scenario 'a user can not create a new category if it already exists' do
-  #   category = 'Development'
-  #   category_two = 'Awesome'
-  #
-  #   visit new_category_path
-  #
-  #   fill_in 'Title', with: category_two
-  #   click_button 'Create Category'
-  #   save_and_open_page
-  #
-  #   expect(current_path).to eq(categories_path)
-  #   expect(page).to have_content("#{category} added!")
-  #   expect(Category.count).to eq(1)
-  # end
+
+  scenario 'a user can not create a new category if it already exists' do
+    Category.new(title: 'Awesome')
+    category = 'Development'
+    category_two = 'Awesome'
+
+    visit new_category_path
+
+    fill_in 'category[title]', with: category_two
+    click_button 'Create Category'
+
+    expect(current_path).to eq(new_category_path)
+    expect(page).to have_content("#{category} already exists")
+  end
 end
 
 
