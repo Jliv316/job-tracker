@@ -33,7 +33,3 @@ describe 'User creates a new category' do
     expect(Category.count).to eq(1)
   end
 end
-
-
-# When the user tries to create a Category that already exists,
-# they are brought back to the page with the form to create a Category.
