@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
       flash[:success] = "Created comment: #{@comment.body}"
       redirect_to company_job_path(@job.company, @job)
     else
-      render :new
+      redirect_to company_job_path(@job.company, @job)
     end
   end
 

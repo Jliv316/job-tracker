@@ -1,5 +1,5 @@
 <h3>Post a Comment</h3>
-<%= form_for [@company, @job, @comment] do |f| %>
+<%= form_for [@job, @comment] do |f| %>
   <%= f.text_area :body %>
 
   <%= f.submit %>
