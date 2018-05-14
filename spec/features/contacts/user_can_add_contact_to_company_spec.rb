@@ -9,8 +9,16 @@ describe 'user visits the page for a specific company' do
 
         visit "/companies/#{company.id}"
 
-        fill_in 'contact[full_name]', with: name
+        fill_in 'contact[full_name]', with: contact_name
+        fill_in 'contact[position]', with: position
+        fill_in 'contact[email]', with: email
+        click_on 'Create Contact'
 
+        expect(current_path).to eq(company_path(company))
+        expect(page).to have_content(company)
+        expect(page).to have_content(contact_name)
+        expect(page).to have_content(position)
+        expect(page).to have_content(email)
       end
     end
   end
