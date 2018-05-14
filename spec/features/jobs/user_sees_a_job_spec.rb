@@ -8,7 +8,7 @@ describe 'User visits the company_job show page' do
       comment = job.comments.create!(body: 'Spoke to hiring manager, Jacob. Plan to follow up Monday.')
 
       visit company_job_path(company, job)
-      binding.pry
+      save_and_open_page
       expect(page).to have_content(comment.body)
       expect(page).to have_content("ESPN")
       expect(page).to have_content("Developer")
