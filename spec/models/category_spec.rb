@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Category do
   describe 'validations' do
     context 'invalid attributes' do
-      it 'is invalid without name' do
+      it 'is invalid without title' do
         category = Category.new
 
         expect(category).to be_invalid
