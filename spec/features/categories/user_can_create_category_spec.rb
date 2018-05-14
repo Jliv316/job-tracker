@@ -15,9 +15,13 @@ describe 'User creates a new category' do
   end
 
   scenario 'a user can not create a new category if it already exists' do
-    Category.new(title: 'Awesome')
+    Category.create!(title: 'Awesome')
     category = 'Development'
     category_two = 'Awesome'
+
+    visit categories_path
+    expect(page).to have_content("#{category_two}")
+    expect(Category.count).to eq(1)
 
     visit new_category_path
 
@@ -25,7 +29,8 @@ describe 'User creates a new category' do
     click_button 'Create Category'
 
     expect(current_path).to eq(new_category_path)
-    expect(page).to have_content("#{category} already exists")
+    expect(page).to have_content("Please try again, #{category_two} already exists")
+    expect(Category.count).to eq(1)
   end
 end
 
