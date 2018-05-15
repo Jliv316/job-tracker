@@ -1,6 +1,9 @@
 Title: <%= @job.title %>
 <br>
 
+<%= link_to "see other #{@job.category.title} jobs here", new_category_path %>
+<br>
+
 Description: <%= @job.description %>
 <br>
 
