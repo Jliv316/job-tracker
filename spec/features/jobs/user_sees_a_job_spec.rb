@@ -4,7 +4,8 @@ describe 'User visits the company_job show page' do
   describe "User sees a specific job" do
     scenario "a user sees a job for a specific company" do
       company = Company.create!(name: "ESPN")
-      job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
+      category = Category.create!(title: 'Development')
+      job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver", category_id: category.id)
       comment = job.comments.create!(body: 'Spoke to hiring manager, Jacob. Plan to follow up Monday.')
 
       visit company_job_path(company, job)
@@ -35,5 +36,3 @@ describe 'User visits the company_job show page' do
     end
   end
 end
-
-
