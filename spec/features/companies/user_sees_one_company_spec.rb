@@ -15,12 +15,12 @@ describe "User sees one company" do
   scenario "a user sees contacts listed for specific company" do
     company = Company.create!(name: "ESPN")
     company.jobs.create!(title: 'Developer', level_of_interest: 90, city: 'Denver')
-    company.contacts.create!(full_name: 'Dwight Schrute', position: 'Assistant to the Regional Manager', email: 'dwight_schrute@scranton.com' )
-    
+    contact = company.contacts.create!(full_name: 'Dwight Schrute', position: 'Assistant to the Regional Manager', email: 'dwight_schrute@scranton.com' )
+
     visit company_path(company)
 
     expect(page).to have_content(contact.full_name)
-    expect(page).to have_content(position)
-    expect(page).to have_content(email)
+    expect(page).to have_content(contact.position)
+    expect(page).to have_content(contact.email)
   end
 end

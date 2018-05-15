@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe 'user visits the page for a specific company' do
   describe 'there is a form that allows them to enter a contact' do
     describe 'when user fills in form and submits form' do
