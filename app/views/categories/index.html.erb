@@ -1,0 +1,12 @@
+<h3>Job Categories</h3>
+
+  <a class= 'button' href=<%= new_category_path %>>add a new category</a>
+
+
+  <ul>
+    <%= @categories.each do |category| %>
+    <li class=category <%= category.title %>
+    <li><%= link_to 'Edit', edit_category_path(category) %> <%= category.title %> <%= category.title.size %></li>
+    </li>
+    <% end %>
+  </ul>
