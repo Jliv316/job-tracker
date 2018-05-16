@@ -14,7 +14,7 @@ describe 'User adds category while creating job' do
     fill_in "job[level_of_interest]", with: 80
     fill_in "job[city]", with: "Denver"
 
-    click_button "Create Job"
+    click_button 'Create'
 
     expect(current_path).to eq company_job_path(company, Job.last.category_id)
     expect(page).to have_content("ESPN")
