@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-describe "User sees all categories" do
-  scenario "a user sees all the categories" do
+describe 'User sees all categories' do
+  scenario 'a user sees all the categories' do
     category_title = 'Development'
     category_title_two = 'Science'
-    category = Category.create!(title: category_title)
-    category_two = Category.create!(title: category_title_two)
+    Category.create!(title: category_title)
+    Category.create!(title: category_title_two)
 
     visit categories_path
 
@@ -13,11 +13,11 @@ describe "User sees all categories" do
     expect(page).to have_link('add a new category', :href => '/categories/new')
   end
 
-  scenario "a user sees all the categories" do
+  scenario 'a user sees all the categories' do
     category_title = 'Development'
     category_title_two = 'Science'
-    category = Category.create!(title: category_title)
-    category_two = Category.create!(title: category_title_two)
+    Category.create!(title: category_title)
+    Category.create!(title: category_title_two)
 
     visit categories_path
 
