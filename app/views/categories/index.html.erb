@@ -1,7 +1,14 @@
-<h3>Job Categories</h3>
+<link rel="stylesheet" href="../assets/stylesheets/application.css" title="CSS" type="text/css"/>
 
-  <a class= 'button' href=<%= new_category_path %>>add a new category</a>
+<header>
+  <center>
+    <h3>Job Categories</h3>
+  </center>
+</header>
+<br>
+<br>
 
+  <a class= 'link' href=<%= new_category_path %>>Add a New Category</a>
 
   <ul>
     <%= @categories.each do |category| %>

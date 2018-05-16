@@ -11,6 +11,8 @@ get '/dashboard', to: 'dashboard#index', as: 'dashboard'
     resources :comments
   end
   resources :categories
+
+  root to: 'dashboard#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
