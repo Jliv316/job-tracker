@@ -1,16 +1,16 @@
 <link rel="stylesheet" href="../assets/stylesheets/application.css" title="CSS" type="text/css"/>
 
-<header>
-  <center>
-    <strong>Dashboard</strong>
-  </center>
-</header>
+<h3>Count by level of interest</h3>
+<ul>
+<% @level_of_interest.each do |key, value| %>
+  <li>Level of interest:<%=key%> count: <%= value %></li>
+<%end%>
+</ul>
 
-<body>
-  <h3>Count by level of interest</h3>
-  <ul>
-  <% @level_of_interest.each do |key, value| %>
-    <li>Level of interest:<%=key%> count: <%= value %></li>
-  <%end%>
-  </ul>
-</body>
+<h3>Count by city</h3>
+<ul>
+<% @job_locations.each do |key, value| %>
+  <li>City:<%=key%> # of jobs: <%= value %></li>
+<%end%>
+</ul>
+
