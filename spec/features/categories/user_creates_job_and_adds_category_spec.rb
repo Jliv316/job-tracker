@@ -21,6 +21,3 @@ describe 'User adds category while creating job' do
     expect(page).to have_link(href= "see other #{category_title} jobs here")
   end
 end
-
-# When the user creates a new Job, they are required to select its Category from
-# a drop down menu of existing categories. They also see a link to create a new Category.
