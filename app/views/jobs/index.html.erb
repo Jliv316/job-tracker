@@ -1,5 +1,4 @@
 <h3>All Jobs for <strong><%= @company.name %></strong></h3>
-
 <ul>
   <% @jobs.each do |job| %>
   <li class=job_<%= job.id %>>
@@ -9,6 +8,8 @@
   </li>
   <% end %>
 </ul>
+
+<%= render partial: 'contacts/form' %>
 
 <h3>All Contacts for <strong><%= @company.name %></strong></h3>
 <ul>
