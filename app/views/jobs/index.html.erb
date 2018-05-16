@@ -1,5 +1,4 @@
 <h3>All Jobs for <strong><%= @company.name %></strong></h3>
-
 <ul>
   <% @jobs.each do |job| %>
   <li class=job_<%= job.id %>>
@@ -7,5 +6,16 @@
     <%= link_to "Edit", edit_company_job_path(@company, job) %>
     <%= link_to "Delete", company_job_path(job.company, job), method: :delete %>
   </li>
+  <% end %>
+</ul>
+
+<%= render partial: 'contacts/form' %>
+
+<h3>All Contacts for <strong><%= @company.name %></strong></h3>
+<ul>
+  <% @company.contacts.each do |contact| %>
+  <li>Name: <%= contact.full_name %></li>
+  <li>Position: <%= contact.position %></li>
+  <li>Email: <%= contact.email %></li>
   <% end %>
 </ul>
