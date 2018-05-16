@@ -1,0 +1,8 @@
+<strong>Dashboard</strong>
+
+<h3>Count by level of interest</h3>
+<ul>
+<% @level_of_interest.each do |key, value| %>
+  <li>Level of interest:<%=key%> count: <%= value %></li>
+<%end%>
+</ul>
