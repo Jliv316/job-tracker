@@ -4,7 +4,8 @@ describe Job do
   describe "validations" do
     context "invalid attributes" do
       it "is invalid without a title" do
-        job = Job.new(level_of_interest: 80, description: "Wahoo", city: "Denver")
+        category = Category.create!(title: 'Development')
+        job = Job.new(level_of_interest: 80, description: "Wahoo", city: "Denver", category_id: category.id)
         expect(job).to be_invalid
       end
 

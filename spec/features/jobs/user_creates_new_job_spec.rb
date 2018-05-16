@@ -8,7 +8,6 @@ describe "User creates a new job" do
     visit new_company_job_path(company)
 
     fill_in "job[title]", with: "Developer"
-
     fill_in "job[description]", with: "So fun!"
     fill_in "job[level_of_interest]", with: 80
     fill_in "job[city]", with: "Denver"
