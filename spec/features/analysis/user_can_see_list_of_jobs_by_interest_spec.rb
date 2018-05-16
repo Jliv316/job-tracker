@@ -10,7 +10,7 @@ describe 'User visits /dashboard' do
     job4 = company.jobs.create!(title: "QA Analyst", level_of_interest: 70, city: "Dallas", category_id: category.id)
     
     visit '/dashboard'
-    save_and_open_page
+
     expect(page).to have_content(job1.level_of_interest)
     expect(page).to have_content(job2.level_of_interest)
     expect(page).to have_content(job3.level_of_interest)

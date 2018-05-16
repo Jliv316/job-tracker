@@ -1,8 +1,11 @@
 class JobsController < ApplicationController
   def index
-    if params[:sort]
-      @jobs = Job.sort_by_city
+    if params[:sort] == 'location'
+      @jobs = Job.by_city
       render :city_sorted
+    elsif params[:sort] == 'interest'
+      @jobs = Job.by_interest
+      render :interest_sorted
     elsif params[:location]
       @city = params[:location]
       @jobs = Job.all.where(:city => params[:location])

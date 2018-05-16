@@ -1,0 +1,10 @@
+<h3>All Jobs Sorted by Interest></strong></h3>
+<ul>
+  <% @jobs.each do |job| %>
+    <li>
+    <%= job.title %>
+    <%= job.level_of_interest %>
+    <%= job.city %>
+  </li>
+  <% end %>
+</ul>

@@ -4,7 +4,7 @@ class Job < ApplicationRecord
   belongs_to :company
   belongs_to :category
 
-  def self.sort_by_city
+  def self.by_city
     Job.order('city ASC')
   end
 
@@ -15,4 +15,9 @@ class Job < ApplicationRecord
   def self.by_location
     Job.all.group(:city).count
   end
+
+  def self.by_interest
+    Job.order('level_of_interest ASC')
+  end
+
 end
