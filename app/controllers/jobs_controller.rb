@@ -10,10 +10,13 @@ class JobsController < ApplicationController
       @city = params[:location]
       @jobs = Job.all.where(:city => params[:location])
       render :city_jobs
-    else
+    elsif params[:company_id]
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs
       @contact = Contact.new(company_id: @company.id)
+    else
+      @jobs = Job.all
+      render :all
     end
   end
 
