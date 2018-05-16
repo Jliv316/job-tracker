@@ -6,6 +6,7 @@ describe 'user edits an existing job' do
     category = Category.create!(title: 'Development')
     job = company.jobs.create!(title: "test", level_of_interest: 70, city: "test", category_id: category.id)
     visit edit_company_job_path(company, job)
+    
     title = "Developer"
     fill_in "job[title]", with: title
     fill_in "job[description]", with: "So fun!"

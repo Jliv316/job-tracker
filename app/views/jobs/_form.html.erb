@@ -1,6 +1,6 @@
 <%= form_for [@company, @job] do |f| %>
 
-  <%= f.label :category %>
+  <%= f.label :category_id %>
   <%= f.collection_select :category_id, Category.all, :id, :title %>
 
   <%= f.label :title %>
