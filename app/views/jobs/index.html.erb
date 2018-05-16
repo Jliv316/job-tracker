@@ -1,4 +1,11 @@
-<h3>All Jobs for <strong><%= @company.name %></strong></h3>
+<link rel="stylesheet" href="../assets/stylesheets/application.css" title="CSS" type="text/css"/>
+
+<header>
+  <center>
+    <h3>All Jobs for <strong><%= @company.name %></strong></h3>
+  </center>
+</header>
+
 <ul>
   <% @jobs.each do |job| %>
   <li class=job_<%= job.id %>>
