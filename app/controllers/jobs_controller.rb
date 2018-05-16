@@ -3,10 +3,12 @@ class JobsController < ApplicationController
     if params[:sort]
       @jobs = Job.sort_by_city
       render :city_sorted
-    else
+    elsif params[:company]
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs
       @contact = Contact.new(company_id: @company.id)
+    else
+      @jobs = Jobs.all
     end
   end
 
