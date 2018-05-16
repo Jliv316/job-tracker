@@ -16,7 +16,7 @@ describe 'User adds category while creating job' do
 
     click_button 'Create'
 
-    expect(current_path).to eq company_job_path(company, Job.last.category_id)
+    expect(current_path).to eq job_path(Job.last)
     expect(page).to have_content("ESPN")
     expect(page).to have_link(href= "see other #{category_title} jobs here")
   end
