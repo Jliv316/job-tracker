@@ -9,3 +9,12 @@
   </li>
   <% end %>
 </ul>
+
+<h3>All Contacts for <strong><%= @company.name %></strong></h3>
+<ul>
+  <% @company.contacts.each do |contact| %>
+  <li>Name: <%= contact.full_name %></li>
+  <li>Position: <%= contact.position %></li>
+  <li>Email: <%= contact.email %></li>
+  <% end %>
+</ul>
