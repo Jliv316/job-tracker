@@ -7,4 +7,8 @@ class Job < ApplicationRecord
   def self.sort_by_city
     Job.order('city ASC')
   end
+
+  def self.by_level_of_interest
+    Job.all.group(:level_of_interest).count
+  end
 end
