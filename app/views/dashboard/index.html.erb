@@ -6,3 +6,10 @@
   <li>Level of interest:<%=key%> count: <%= value %></li>
 <%end%>
 </ul>
+
+<h3>Count by city</h3>
+<ul>
+<% @job_locations.each do |key, value| %>
+  <li>City:<%=key%> # of jobs: <%= value %></li>
+<%end%>
+</ul>
