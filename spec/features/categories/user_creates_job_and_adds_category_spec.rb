@@ -18,6 +18,6 @@ describe 'User adds category while creating job' do
 
     expect(current_path).to eq job_path(Job.last)
     expect(page).to have_content("ESPN")
-    expect(page).to have_link(href= "see other #{category_title} jobs here")
+    expect(page).to have_link("see other #{category_title} jobs here")
   end
 end
