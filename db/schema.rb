@@ -60,5 +60,6 @@ ActiveRecord::Schema.define(version: 20180516122315) do
 
   add_foreign_key "comments", "jobs"
   add_foreign_key "contacts", "companies"
+  add_foreign_key "jobs", "categories"
   add_foreign_key "jobs", "companies"
 end
