@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User edits category' do
-  scenario "a user is taken to edit form by clicking through index" do
+  scenario 'a user is taken to edit form by clicking through index' do
     category_title = 'Development'
     category = Category.create!(title: category_title)
 
@@ -12,7 +12,7 @@ describe 'User edits category' do
     expect(page).to have_button('Update Category')
   end
 
-  scenario "a user edits category" do
+  scenario 'a user edits category' do
     category_title = 'Development'
     new_category = 'Awesome'
     category = Category.create!(title: category_title)
